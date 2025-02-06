@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>День Влюблённых</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Фоновая музыка -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="container">
+        <h1>С Днём Влюблённых! Что выберешь?</h1>
+        <div class="buttons">
+            <button onclick="showCard()">❤️ Открытка</button>
+            <button onclick="startQuest()">🎮 Квест</button>
+            <button onclick="showPrediction()">🔮 Предсказание</button>
+            <button onclick="toggleMusic()">🎵 Музыка</button>
+        </div>
+    </div>
+
+    <!-- Открытка -->
+    <div id="card" class="hidden">
+        <div class="heart" onclick="showMessage()">💖</div>
+        <p id="message" class="hidden">Ты особенный(ая)! 💕</p>
+    </div>
+
+    <!-- Квест -->
+    <div id="quest" class="hidden">
+        <p>Купидон потерял подарок! Что выбрать?</p>
+        <button onclick="checkAnswer('цветы')">🌹 Цветы</button>
+        <button onclick="checkAnswer('шоколад')">🍫 Шоколад</button>
+        <button onclick="checkAnswer('кольцо')">💍 Кольцо</button>
+        <p id="quest-result"></p>
+    </div>
+
+    <!-- Предсказатель -->
+    <div id="prediction" class="hidden">
+        <p>Нажми кнопку, чтобы узнать свою судьбу:</p>
+        <button onclick="generatePrediction()">🔮 Узнать</button>
+        <p id="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
